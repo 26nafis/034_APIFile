@@ -23,7 +23,10 @@ const fileFilter = (req, file, cb) => {
 
   if (extname && mimetype) {
     cb(null, true);
- 
+  } else {
+    cb(new Error("Hanya file JPG, JPEG, dan PNG yang diperbolehkan."));
+  }
+};
 
 
 
