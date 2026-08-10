@@ -4,6 +4,7 @@ const penulisController = require("../controller/penulisController");
 const komikController = require("../controller/komikController");
 const genreController = require("../controller/genreController");
 const authMiddleware = require("../middleware/authMiddleware");
+const 
 
 router.post("/register", penulisController.register);
 router.post("/login", penulisController.login);
