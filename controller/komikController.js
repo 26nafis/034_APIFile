@@ -69,6 +69,8 @@ async function update(req, res) {
       return res.status(404).json({ message: "Komik tidak ditemukan." });
     }
 
+    const gambar = req.file ? req.file.filename : null;
+
     await komik.update({ judul, sinopsis, tahun_terbit, penulis_id });
 
     if (genre_ids) {
