@@ -17,6 +17,7 @@ router.delete("/genre/:id", authMiddleware, genreController.remove);
 
 router.get("/komik", authMiddleware, komikController.getAll);
 router.post("/komik", authMiddleware, uploadMiddleware.single("gambar"), komikController.create);
+router.put(;
 router.delete("/komik/:id", authMiddleware, komikController.remove);
 
 module.exports = router;
