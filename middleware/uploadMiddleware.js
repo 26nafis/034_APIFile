@@ -19,6 +19,10 @@ const fileFilter = (req, file, cb) => {
     path.extname(file.originalname).toLowerCase()
   );
 
+  const mimetype = allowedTypes.test(file.mimetype);
+
+  if (extname && mimetype) {
+    cb(null, true);
  
 
 
