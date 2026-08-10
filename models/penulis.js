@@ -1,3 +1,4 @@
+// models/penulis.js
 module.exports = (sequelize, DataTypes) => {
   const Penulis = sequelize.define("Penulis", {
     id: {
@@ -23,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: true
   });
 
+  // Relasi: satu Penulis bisa punya banyak Komik
   Penulis.associate = (models) => {
     Penulis.hasMany(models.Komik, {
       foreignKey: "penulis_id",
