@@ -37,6 +37,8 @@ async function create(req, res) {
       return res.status(404).json({ message: "Penulis tidak ditemukan." });
     }
 
+    const gambar = req.file ? req.file.filename : null;
+
     const komik = await Komik.create({ judul, sinopsis, tahun_terbit, penulis_id });
 
     if (genre_ids && genre_ids.length > 0) {
